@@ -1,0 +1,324 @@
+﻿<Window x:Class="PostgreSQL_Study.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PostgreSQL_Study"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="550" 
+        Width="900" Closed="Window_Closed">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"
+                              MaxWidth="280"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Top-Menu -->
+        <Menu Grid.Row="0"
+              Grid.ColumnSpan="2">
+            <MenuItem Header="Файл"
+                      Height="20"
+                      Margin="20,1,0,0">
+
+                <MenuItem x:Name="OpenFileButton"
+                          Header="Открыть файл" 
+                          Click="OpenFileButton_Click"/>
+
+                <MenuItem x:Name="SaveFileButton"
+                          Header="Сохранить" 
+                          Click="SaveFileButton_Click"
+                          IsEnabled="False"/>
+
+                <Separator/>
+
+                <MenuItem x:Name="SettingsButton"
+                          Header="Настройки" 
+                          Click="SettingsButton_Click"/>
+
+                <Separator/>
+
+                <MenuItem x:Name="ExitButton"
+                          Header="Выход" 
+                          Click="ExitButton_Click"/>
+            </MenuItem>
+            <MenuItem Header="Запросник"
+                      Height="20"
+                      Margin="0,1,0,0">
+                <MenuItem x:Name="Inquirer"
+                          Header="Новый запрос"
+                          Click="Inquirer_Click"/>
+                
+                <Separator/>
+
+                <MenuItem x:Name="Inquirer_Start"
+                          Header="Запустить"
+                          IsEnabled="False"/>
+
+                <MenuItem x:Name="Inquirer_Clear"
+                          Header="Очистить"
+                          IsEnabled="False"/>
+
+                <MenuItem x:Name="Inquirer_Export"
+                          Header="Экспорт"
+                          IsEnabled="False"/>
+            </MenuItem>
+            <MenuItem Header="Справка"
+                      Height="20"
+                      Margin="0,1,0,0">
+                
+                <MenuItem x:Name="InstructionButton"
+                          Header="Инструкция"
+                          Click="OpenHTMLDocument_Click"
+                          Tag="Course/index.html"/>
+                
+                <MenuItem x:Name="AboutProgram"
+                          Header="О программе" Click="AboutProgram_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <!-- Right Menu -->
+        <Grid Grid.Column="0"
+              Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"
+                               MaxHeight="100"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Logo -->
+            <StackPanel x:Name="Logo"
+                        Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <Image x:Name="LogoImage"
+                       Source="/Resources/Logo/PostgreSQL_Logo.png"
+                       Height="35"
+                       Width="35"/>
+
+                <Label x:Name="LogoLabel"
+                       Content="PostgreSQL Study"
+                       FontSize="15"
+                       VerticalContentAlignment="Center"
+                       HorizontalAlignment="Right"
+                       Margin="10,0,0,0"/>
+            </StackPanel>
+
+            <!-- Dropdown Menu -->
+            <ScrollViewer x:Name="Menu"
+                          Grid.Row="1">
+                <StackPanel>
+                    <!-- Модуль 1 -->
+                    <Expander Style="{StaticResource ExpanderStyle}"
+                              Expanded="Expander_Expanded">
+                        <Expander.Header>
+                            <TextBlock Text="Модуль 1: Введение в PostgreSQL" 
+                                       TextWrapping="Wrap"/>
+                        </Expander.Header>
+
+                        <StackPanel>
+                            <Button Content="Введение в базы данных"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                            <Button Content="Введение в PostgreSQL"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                            <Button Content="Создание базы данных и таблиц"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                        </StackPanel>
+                    </Expander>
+
+                    <!-- Модуль 2 -->
+                    <Expander Style="{StaticResource ExpanderStyle}"
+                              Expanded="Expander_Expanded">
+                        <Expander.Header>
+                            <TextBlock Text="Модуль 2: Основные операции с данными" 
+                                       TextWrapping="Wrap"/>
+                        </Expander.Header>
+
+                        <StackPanel>
+                            <Button Content="Вставка данных (INSERT)"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                            <Button Content="Извлечение данных (SELECT)"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                            <Button Content="Обновление данных (UPDATE)"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                            <Button Content="Удаление данных (DELETE)"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                        </StackPanel>
+                    </Expander>
+
+                    <!-- Модуль 3 -->
+                    <Expander Style="{StaticResource ExpanderStyle}"
+                              Expanded="Expander_Expanded">
+                        <Expander.Header>
+                            <TextBlock Text="Модуль 3: Фильтрация и сортировка данных" 
+                                       TextWrapping="Wrap"/>
+                        </Expander.Header>
+
+                        <StackPanel>
+                            <Button Content="Условия выборки (WHERE)"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                            <Button Content="Условия выборки (HAVING)"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                            <Button Content="Фильтрация (BETWEEN / IN/ NOT IN)"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                            <Button Content="Группировка (GROUP BY)"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                            <Button Content="Сортировка выборки (ORDER BY)"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
+                                <Button.Content>
+                                    <TextBlock Text="Ограничение и смещение результатов запросов (LIMIT/OFFSET)" 
+                                               TextWrapping="Wrap"/>
+                                </Button.Content>
+                            </Button>
+                        </StackPanel>
+                    </Expander>
+
+                    <!-- Модуль 4 -->
+                    <Expander Style="{StaticResource ExpanderStyle}"
+                              Expanded="Expander_Expanded">
+                        <Expander.Header>
+                            <TextBlock Text="Модуль 4: Объединение и преобразование данных" 
+                                       TextWrapping="Wrap"/>
+                        </Expander.Header>
+
+                        <StackPanel>
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
+                                <Button.Content>
+                                    <TextBlock Text="Объединение результатов (UNION)" 
+                                               TextWrapping="Wrap"/>
+                                </Button.Content>
+                            </Button>
+
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
+                                <Button.Content>
+                                    <TextBlock Text="Пересечение результатов (INTERSECT)" 
+                                               TextWrapping="Wrap"/>
+                                </Button.Content>
+                            </Button>
+
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
+                                <Button.Content>
+                                    <TextBlock Text="Разница между результатами (EXCEPT)" 
+                                               TextWrapping="Wrap"/>
+                                </Button.Content>
+                            </Button>
+
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
+                                <Button.Content>
+                                    <TextBlock Text="Вывод уникальны значений (DISTINCT)" 
+                                               TextWrapping="Wrap"/>
+                                </Button.Content>
+                            </Button>
+                        </StackPanel>
+                    </Expander>
+
+                    <!-- Модуль 5 -->
+                    <Expander Style="{StaticResource ExpanderStyle}"
+                              Expanded="Expander_Expanded">
+                        <Expander.Header>
+                            <TextBlock Text="Модуль 5: Соединение таблиц" 
+                                       TextWrapping="Wrap"/>
+                        </Expander.Header>
+
+                        <StackPanel>
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
+                                <Button.Content>
+                                    <TextBlock Text="Соединение таблиц по общим значениям (INNER JOIN)" 
+                                               TextWrapping="Wrap"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
+                                <Button.Content>
+                                    <TextBlock Text="Соединение с левым приоритетом (LEFT JOIN)" 
+                                                     TextWrapping="Wrap"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
+                                <Button.Content>
+                                    <TextBlock Text="Соединение с правым приоритетом (RIGHT JOIN)" 
+                                               TextWrapping="Wrap"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Content="Все комбинации (CROSS JOIN)"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                        </StackPanel>
+                    </Expander>
+
+                    <!-- Модуль 6 -->
+                    <Expander Style="{StaticResource ExpanderStyle}"
+                              Expanded="Expander_Expanded">
+                        <Expander.Header>
+                            <TextBlock Text="Модуль 6: Агрегатные функции" 
+                                       TextWrapping="Wrap"/>
+                        </Expander.Header>
+
+                        <StackPanel>
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
+                                <Button.Content>
+                                    <TextBlock Text="Функция для вычисления среднего значения (AVG)" 
+                                               TextWrapping="Wrap"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
+                                <Button.Content>
+                                    <TextBlock Text="Функция для суммирования значений (SUM)" 
+                                               TextWrapping="Wrap"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
+                                <Button.Content>
+                                    <TextBlock Text="Функция для подсчета записей (COUNT)" 
+                                               TextWrapping="Wrap"/>
+                                </Button.Content>
+                            </Button>
+                        </StackPanel>
+                    </Expander>
+
+                    <!-- Модуль 6 -->
+                    <Expander Style="{StaticResource ExpanderStyle}"
+                              Expanded="Expander_Expanded">
+                        <Expander.Header>
+                            <TextBlock Text="Модуль 6: Агрегатные функции" 
+                                       TextWrapping="Wrap"/>
+                        </Expander.Header>
+
+                        <StackPanel>
+                            <Button Content="Введение в подзапросы"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                        </StackPanel>
+                    </Expander>
+                </StackPanel>
+            </ScrollViewer>
+
+            <StackPanel Grid.Column="0"
+                        Grid.Row="2"
+                        Margin="0,0,0,5">
+                <Separator Height="5"/>
+
+                <Button x:Name="DatabaseDiagramButton"
+                        Content="Диаграмма БД"
+                        Style="{StaticResource ExpanderMenuButtonTheme}" Click="DatabaseDiagramButton_Click"/>
+                <Button Content="Описание БД"
+                        Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                <Button Content="Содержание БД"
+                        Style="{StaticResource ExpanderMenuButtonTheme}"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Frame -->
+        <Frame x:Name="MainFrame"
+               Grid.Column="1"
+               Grid.Row="1" 
+               Navigated="MainFrame_Navigated"
+               NavigationUIVisibility="Hidden" Navigating="MainFrame_Navigating">
+        </Frame>
+    </Grid>
+</Window>
