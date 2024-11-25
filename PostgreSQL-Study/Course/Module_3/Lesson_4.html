@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по GROUP BY в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Урок по GROUP BY в PostgreSQL</h1>
+
+    <p>Команда <code>GROUP BY</code> используется для группировки строк, имеющих одинаковые значения в указанных столбцах. Она позволяет выполнять операции агрегации, такие как подсчёт количества, вычисление среднего значения и другие.</p>
+
+    <h2>1. Базовый синтаксис</h2>
+    <p>Синтаксис команды <code>GROUP BY</code>:</p>
+    <pre><code>SELECT "столбцы и/или агрегатные_функции" FROM имя_схемы."имя_таблицы" GROUP BY "столбцы";</code></pre>
+
+    <p>Пример: подсчитаем количество фильмов в каждом жанре:</p>
+    <pre><code>SELECT "Genre", COUNT(*) AS "Кол-во фильмов" FROM public."Movies" GROUP BY "Genre";</code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example10.PNG" width="100%" />
+
+    <h2>3. Группировка по нескольким столбцам</h2>
+    <p>Вы можете группировать данные сразу по нескольким столбцам. Например, подсчитаем количество фильмов каждого жанра для каждого года:</p>
+    <pre><code>SELECT "Release_Year", "Genre", COUNT(*) AS "Кол-во фильмов" FROM public."Movies" GROUP BY "Release_Year", "Genre";</code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example11.PNG" width="100%" />
+
+    <h2>4. Использование GROUP BY с агрегатными функциями</h2>
+    <p>Агрегатные функции, такие как <code>COUNT</code>, <code>SUM</code>, <code>AVG</code>, <code>MIN</code>, <code>MAX</code>, часто используются вместе с <code>GROUP BY</code>. Например, найдём средний год публикации для каждого жанра:</p>
+    <pre><code>SELECT "Genre", MIN("Release_Year") AS "Минимальный год выпуска" FROM public."Movies" GROUP BY "Genre";</code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example12.PNG" width="100%" />
+
+    <h2>5. Особенности использования GROUP BY</h2>
+    <ul>
+        <li>Все столбцы, не использующиеся в агрегатных функциях, должны быть указаны в <code>GROUP BY</code>.</li>
+        <li>Выводимые агрегатные данные (например, <code>COUNT</code>, <code>AVG</code>) применяются отдельно к каждой группе.</li>
+    </ul>
+
+    <h2>Заключение</h2>
+    <p>Команда <code>GROUP BY</code> предоставляет мощные возможности для анализа данных, позволяя группировать строки и вычислять агрегированные значения. Она является важной частью языка запросов PostgreSQL.</p>
+
+</body>
+</html>

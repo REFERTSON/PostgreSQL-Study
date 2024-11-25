@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по команде WHERE в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по команде WHERE в PostgreSQL</h1>
+
+    <p>Команда <code>WHERE</code> используется для фильтрации данных в запросах. Она позволяет выбрать только те строки, которые соответствуют заданному условию. В PostgreSQL <code>WHERE</code> может работать с различными операторами и выражениями для более точной фильтрации данных.</p>
+
+    <h2>1. Синтаксис команды WHERE</h2>
+    <p>Основной синтаксис команды <code>WHERE</code> выглядит следующим образом:</p>
+    <pre><code>SELECT "столбцы" FROM схема."таблица" WHERE условие;</code></pre>
+
+    <p>
+        Где:
+        <ul>
+            <li><code>столбцы</code> — это имена столбцов, которые вы хотите получить.</li>
+            <li><code>таблица</code> — это имя схемы, где находится таблица.</li>
+            <li><code>таблица</code> — это имя таблицы, из которой будет выполняться запрос.</li>
+            <li><code>условие</code> — это логическое условие для фильтрации данных.</li>
+        </ul>
+    </p>
+
+    <h2>2. Пример использования WHERE</h2>
+
+    <h2> Пример 1: Фильтрация по году издания</h2>
+    <p>Допустим, мы хотим выбрать все фильмы, выпущеные в жанре "Боевик". Для этого мы используем команду <code>WHERE</code> с условием:</p>
+    <pre><code>SELECT * FROM public."Movies" WHERE "Genre" = 'Боевик';</code></pre>
+
+    <p>Этот запрос вернёт все фильмы в жанре "Боевик".</p>
+
+    <img src="{% BASEDIR %}\Image\Example1.PNG" width="100%" />
+
+    <h2>Пример 2: Фильтрация по году выпуска</h2>
+    <p>Теперь, допустим, мы хотим найти все фильмы, выпущенные после 2016. Для этого мы указываем в запросе условие для фильтрации по году выпуска:</p>
+    <pre><code>SELECT * FROM public."Movies" WHERE "Release_Year" > 2016;</code></pre>
+
+    <p>Этот запрос вернёт все фильмы, которые выпущенные после 2016.</p>
+
+    <img src="{% BASEDIR %}\Image\Example2.PNG" width="100%" />
+
+    <h2>Пример 3: Комбинированные условия</h2>
+    <p>Можно комбинировать несколько условий с помощью оператора <code>AND</code> или <code>OR</code>. Например, чтобы выбрать фильмы, которые были изданы после 2016 года и принадлежат к жанру "Фантастика", используем:</p>
+    <pre><code>SELECT * FROM public."Movies" WHERE "Release_Year" > 2016 AND "Genre" = 'Фантастика';</code></pre>
+
+    <p>Этот запрос вернёт фильмы, которые одновременно соответствуют обоим условиям: изданы после 2016 года и принадлежат к жанру "Фантастика".</p>
+
+    <img src="{% BASEDIR %}\Image\Example3.PNG" width="100%" />
+
+    <h2>Заключение</h2>
+    <p>Команда <code>WHERE</code> в PostgreSQL — это мощный инструмент для фильтрации данных. Она позволяет применять различные логические операторы и функции для точного поиска нужной информации. Используя условия с операторами <code>AND</code>, <code>OR</code>, <code>LIKE</code>, <code>IN</code> и другими, вы можете строить гибкие и эффективные запросы для работы с данными.</p>
+
+</body>
+</html>

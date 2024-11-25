@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по RIGHT JOIN в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по RIGHT JOIN в PostgreSQL</h1>
+
+    <p>Команда <code>RIGHT JOIN</code> используется для соединения строк из двух таблиц. Она возвращает все строки из правой таблицы (дополнительной), даже если в левой таблице (основной) нет совпадений. Если совпадений нет, столбцы из левой таблицы заполняются значением <code>NULL</code>.</p>
+
+    <h2>1. Базовый синтаксис</h2>
+    <p>Синтаксис команды <code>RIGHT JOIN</code>:</p>
+    <pre><code>
+SELECT "столбцы" FROM имя_схемы."таблица1" идентификатор1
+RIGHT JOIN имя_схемы."таблица2" идентификатор2 ON идентификатор1."столбец" = идентификатор2."столбец";
+    </code></pre>
+
+    <p>Пример: предположим, у нас есть таблицы <code>Tickets</code> (Билеты) и <code>Customers</code> (Покупатели). Мы хотим получить список билетов и покупателей, включая тех, у которых нет билетов:</p>
+    <pre><code>
+SELECT * FROM public."Tickets" T
+RIGHT JOIN public."Customers" C ON C."ID_Customer" = T."ID_Customer";
+    </code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example3.PNG" width="100%" />
+
+    <h2>2. Особенности использования RIGHT JOIN</h2>
+    <ul>
+        <li>Все строки из правой таблицы всегда включаются в результат.</li>
+        <li>Если в левой таблице нет совпадений, столбцы из левой таблицы заполняются <code>NULL</code>.</li>
+        <li><code>RIGHT JOIN</code> полезен, когда важно сохранить все данные из дополнительной таблицы, даже если для них нет связанных данных в основной таблице.</li>
+    </ul>
+
+    <h2>Заключение</h2>
+    <p>Команда <code>RIGHT JOIN</code> позволяет сохранить все строки из дополнительной таблицы, даже если в основной таблице нет связанных данных. Это полезно для анализа данных, где важны все записи из дополнительной таблицы.</p>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по SUM в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по SUM в PostgreSQL</h1>
+
+    <p>Команда <code>SUM</code> используется для вычисления суммы значений числового столбца. Она полезна для подсчёта общих метрик, таких как сумма продаж, общее количество страниц или другие показатели.</p>
+
+    <h2>1. Базовый синтаксис</h2>
+    <p>Синтаксис команды <code>SUM</code>:</p>
+    <pre><code>SELECT SUM("столбец") FROM имя_схемы."имя_таблицы";</code></pre>
+
+    <p>Пример: предположим, у нас есть таблица <code>Halls</code> (Залы). Мы хотим вычислить общее количество мест в кинотеатре:</p>
+    <pre><code>SELECT SUM("Capacity") AS "Общее кол-во мест" FROM public."Halls";</code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example3.PNG" width="100%" />
+
+    <h2>2. Особенности использования SUM</h2>
+    <ul>
+        <li><code>SUM</code> игнорирует значения <code>NULL</code> в столбце.</li>
+        <li>Для работы с большими таблицами рекомендуется использовать <code>SUM</code> с группировкой (<code>GROUP BY</code>) или фильтрацией (<code>WHERE</code>), чтобы улучшить производительность.</li>
+    </ul>
+
+    <h2>Заключение</h2>
+    <p>Команда <code>SUM</code> предоставляет удобный способ подсчёта общей суммы числовых данных в PostgreSQL. Она широко используется для анализа данных и расчёта ключевых метрик.</p>
+
+</body>
+</html>

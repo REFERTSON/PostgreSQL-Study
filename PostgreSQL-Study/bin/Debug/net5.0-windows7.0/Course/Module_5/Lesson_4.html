@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по CROSS JOIN в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по CROSS JOIN в PostgreSQL</h1>
+
+    <p>Команда <code>CROSS JOIN</code> используется для выполнения декартового произведения двух таблиц. Это означает, что каждая строка из первой таблицы соединяется с каждой строкой из второй таблицы.</p>
+
+    <h2>1. Базовый синтаксис</h2>
+    <p>Синтаксис команды <code>CROSS JOIN</code>:</p>
+    <pre><code>
+SELECT "столбцы" FROM имя_схемы."таблица1"
+CROSS JOIN имя_схемы."таблица2";
+    </code></pre>
+
+    <p>Пример: предположим, у нас есть таблицы <code>Showtimes</code> (Показы) и <code>Halls</code> (Залы). Мы хотим получить все возможные комбинации Показов и залов:</p>
+    <pre><code>
+SELECT * FROM public."Showtimes"
+CROSS JOIN public."Halls";
+    </code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example4.PNG" width="100%" />
+
+    <h2>2. Особенности использования CROSS JOIN</h2>
+    <ul>
+        <li><code>CROSS JOIN</code> возвращает все возможные комбинации строк из двух таблиц.</li>
+        <li>Если первая таблица содержит <code>N</code> строк, а вторая таблица — <code>M</code>, результат будет содержать <code>N × M</code> строк.</li>
+        <li>Обычно <code>CROSS JOIN</code> применяется в ситуациях, где декартовое произведение данных действительно нужно, например, для генерации всех комбинаций значений.</li>
+    </ul>
+
+    <h2>Заключение</h2>
+    <p>Команда <code>CROSS JOIN</code> полезна для создания декартового произведения двух таблиц. Её использование требует осторожности, так как результат может быть очень большим, особенно если таблицы содержат много строк.</p>
+
+</body>
+</html>

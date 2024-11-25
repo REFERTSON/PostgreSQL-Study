@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по INTERSECT в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по INTERSECT в PostgreSQL</h1>
+
+    <p>Команда <code>INTERSECT</code> используется для получения пересечения результатов двух или более запросов. Она возвращает только те строки, которые присутствуют во всех объединённых запросах.</p>
+
+    <h2>1. Базовый синтаксис</h2>
+    <p>Синтаксис команды <code>INTERSECT</code>:</p>
+    <pre><code>
+SELECT "столбцы" FROM имя_схемы."имя_таблица1"
+INTERSECT
+SELECT "столбцы" FROM имя_схемы."имя_таблица2";
+    </code></pre>
+
+    <p>Пример: предположим, у нас есть таблица <code>Tickets</code> (Билеты), и мы хотим найти покупателей, которые есть как в списке билетов, так и в списке покупателей указанными в таблице <code>Customers</code>:</p>
+    <pre><code>
+SELECT "ID_Customer" FROM public."Tickets"
+INTERSECT
+SELECT "ID_Customer" FROM public."Customers";
+    </code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example3.PNG" width="100%" />
+
+    <h2>3. Особенности использования INTERSECT</h2>
+    <ul>
+        <li>Все запросы, объединённые с помощью <code>INTERSECT</code>, должны возвращать одинаковое количество столбцов.</li>
+        <li>Типы данных соответствующих столбцов должны быть совместимы.</li>
+        <li>Результаты <code>INTERSECT</code> автоматически удаляют дублирующиеся строки.</li>
+        <li>Для упорядочивания результатов пересечения можно использовать <code>ORDER BY</code>, но только после завершения всех запросов.</li>
+    </ul>
+
+    <h2>Заключение</h2>
+    <p>Команда <code>INTERSECT</code> позволяет находить общие строки между несколькими запросами. Она полезна для анализа данных, когда необходимо выявить пересечения между таблицами или наборами данных в PostgreSQL.</p>
+
+</body>
+</html>

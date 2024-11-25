@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по LEFT JOIN в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по LEFT JOIN в PostgreSQL</h1>
+
+    <p>Команда <code>LEFT JOIN</code> используется для соединения строк из двух таблиц. Она возвращает все строки из левой таблицы (основной), даже если в правой таблице (дополнительной) нет совпадений. Если совпадений нет, столбцы из правой таблицы заполняются значением <code>NULL</code>.</p>
+
+    <h2>1. Базовый синтаксис</h2>
+    <p>Синтаксис команды <code>LEFT JOIN</code>:</p>
+    <pre><code>
+SELECT "столбцы" FROM имя_схемы."таблица1" идентификатор1
+LEFT JOIN имя_схемы."таблица2" идентификатор2 ON идентификатор1."столбец" = идентификатор2."столбец";
+    </code></pre>
+
+    <p>Пример: предположим, у нас есть таблицы <code>Hals</code> (Залы) и <code>Showtimes</code> (Показы). Мы хотим получить расписание залов, включая те, которые не указаны в показах:</p>
+    <pre><code>
+SELECT H.*, "ID_Movie", "Start_Time" FROM public."Halls" H
+LEFT JOIN public."Showtimes" S ON S."ID_Hall" = H."ID_Hall";
+    </code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example2.PNG" width="100%" />
+
+    <h2>2. Особенности использования LEFT JOIN</h2>
+    <ul>
+        <li>Все строки из левой таблицы всегда включаются в результат.</li>
+        <li>Если в правой таблице нет совпадений, столбцы из правой таблицы заполняются <code>NULL</code>.</li>
+        <li><code>LEFT JOIN</code> часто используется для анализа данных, где важны все записи из основной таблицы.</li>
+    </ul>
+
+    <h2>Заключение</h2>
+    <p>Команда <code>LEFT JOIN</code> полезна для получения всех строк из основной таблицы с дополнительной информацией из связанной таблицы. Даже если совпадений нет, данные из основной таблицы сохраняются в результатах.</p>
+
+</body>
+</html>

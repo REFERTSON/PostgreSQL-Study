@@ -10,6 +10,6 @@
 
     <Grid>
         <WebBrowser x:Name="CourseView"
-                    Margin="10"/>
+                    Margin="5"/>
     </Grid>
 </Page>

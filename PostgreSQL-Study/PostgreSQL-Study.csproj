@@ -14,13 +14,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Course\Database\Image\Table\" />
+    <Folder Include="Course\Database\Image\Content\" />
+    <Folder Include="Course\Module_2\Image\" />
+    <Folder Include="Course\Module_3\Image\" />
+    <Folder Include="Course\Module_5\Image\" />
+    <Folder Include="Course\Module_6\Image\" />
     <Folder Include="Resources\Icons\" />
     <Folder Include="Utils\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Markdig" Version="0.38.0" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2849.39" />
     <PackageReference Include="MiniExcel" Version="1.34.2" />
     <PackageReference Include="Npgsql" Version="8.0.5" />
+    <PackageReference Include="Pek.Markdig.HighlightJs" Version="0.5.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,10 +42,211 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Course\index.html">
+    <None Update="Course\Database\DatabaseContent.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Course\indexStyle.css">
+    <None Update="Course\Database\DatabaseDescription.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Database\Image\Content\Example1.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Database\Image\Content\Example2.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Database\Image\Content\Example3.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Database\Image\Content\Example4.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Database\Image\Content\Example5.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Database\Image\Table\Example1.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Database\Image\Table\Example2.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Database\Image\Table\Example3.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Database\Image\Table\Example4.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Database\Image\Table\Example5.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_2\Image\Example1.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_2\Image\Example2.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_2\Lesson_1.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example1.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example10.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example11.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example12.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example13.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example14.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example15.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example16.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example17.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example18.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example2.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example3.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example4.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example5.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example6.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example7.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example8.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Image\Example9.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Lesson_1.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Lesson_2.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Lesson_3.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Lesson_4.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Lesson_5.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_3\Lesson_6.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_4\Image\Example1.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_4\Image\Example2.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_4\Image\Example3.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_4\Image\Example4.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_4\Image\Example5.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_4\Image\Example6.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_4\Lesson_1.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_4\Lesson_2.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_4\Lesson_3.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_4\Lesson_4.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_5\Image\Example1.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_5\Image\Example2.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_5\Image\Example3.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_5\Image\Example4.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_5\Lesson_1.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_5\Lesson_2.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_5\Lesson_3.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_5\Lesson_4.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_6\Image\Example1.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_6\Image\Example2.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_6\Image\Example3.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_6\Image\Example4.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_6\Image\Example5.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_6\Lesson_1.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_6\Lesson_2.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_6\Lesson_3.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_7\Image\Example1.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_7\Image\Example2.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_7\Image\Example3.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Course\Module_7\Lesson_1.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

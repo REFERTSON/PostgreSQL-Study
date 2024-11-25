@@ -8,11 +8,36 @@
     ".NETCoreApp,Version=v5.0": {
       "PostgreSQL-Study/1.0.0": {
         "dependencies": {
+          "Markdig": "0.38.0",
+          "Microsoft.Web.WebView2": "1.0.2849.39",
           "MiniExcel": "1.34.2",
-          "Npgsql": "8.0.5"
+          "Npgsql": "8.0.5",
+          "Pek.Markdig.HighlightJs": "0.5.1",
+          "Microsoft.Web.WebView2.Core": "1.0.2849.39",
+          "Microsoft.Web.WebView2.WinForms": "1.0.2849.39",
+          "Microsoft.Web.WebView2.Wpf": "1.0.2849.39"
         },
         "runtime": {
           "PostgreSQL-Study.dll": {}
+        }
+      },
+      "Jurassic/3.0.0": {
+        "dependencies": {
+          "System.Reflection.Emit.Lightweight": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Jurassic.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "Markdig/0.38.0": {
+        "runtime": {
+          "lib/netstandard2.1/Markdig.dll": {
+            "assemblyVersion": "0.38.0.0",
+            "fileVersion": "0.38.0.0"
+          }
         }
       },
       "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
@@ -44,6 +69,27 @@
           }
         }
       },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.Web.WebView2/1.0.2849.39": {
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/WebView2Loader.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "1.0.2849.39"
+          },
+          "runtimes/win-x64/native/WebView2Loader.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "1.0.2849.39"
+          },
+          "runtimes/win-x86/native/WebView2Loader.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "1.0.2849.39"
+          }
+        }
+      },
       "MiniExcel/1.34.2": {
         "runtime": {
           "lib/netstandard2.0/MiniExcel.dll": {
@@ -65,6 +111,18 @@
           "lib/netstandard2.1/Npgsql.dll": {
             "assemblyVersion": "8.0.5.0",
             "fileVersion": "8.0.5.0"
+          }
+        }
+      },
+      "Pek.Markdig.HighlightJs/0.5.1": {
+        "dependencies": {
+          "Jurassic": "3.0.0",
+          "Markdig": "0.38.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Pek.Markdig.HighlightJs.dll": {
+            "assemblyVersion": "0.5.1.0",
+            "fileVersion": "0.5.1.0"
           }
         }
       },
@@ -93,13 +151,66 @@
           }
         }
       },
+      "System.IO/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        }
+      },
       "System.Memory/4.5.5": {},
+      "System.Reflection/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.IO": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "System.Reflection.Emit.ILGeneration/4.3.0": {
+        "dependencies": {
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "System.Reflection.Emit.Lightweight/4.3.0": {
+        "dependencies": {
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "System.Reflection.Primitives/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "System.Runtime/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0"
+        }
+      },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {
         "runtime": {
           "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.21.52210"
           }
+        }
+      },
+      "System.Text.Encoding/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0"
         }
       },
       "System.Text.Encodings.Web/8.0.0": {
@@ -139,7 +250,38 @@
           }
         }
       },
-      "System.Threading.Tasks.Extensions/4.5.4": {}
+      "System.Threading.Tasks/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.4": {},
+      "Microsoft.Web.WebView2.Core/1.0.2849.39": {
+        "runtime": {
+          "Microsoft.Web.WebView2.Core.dll": {
+            "assemblyVersion": "1.0.2849.39",
+            "fileVersion": "1.0.2849.39"
+          }
+        }
+      },
+      "Microsoft.Web.WebView2.WinForms/1.0.2849.39": {
+        "runtime": {
+          "Microsoft.Web.WebView2.WinForms.dll": {
+            "assemblyVersion": "1.0.2849.39",
+            "fileVersion": "1.0.2849.39"
+          }
+        }
+      },
+      "Microsoft.Web.WebView2.Wpf/1.0.2849.39": {
+        "runtime": {
+          "Microsoft.Web.WebView2.Wpf.dll": {
+            "assemblyVersion": "1.0.2849.39",
+            "fileVersion": "1.0.2849.39"
+          }
+        }
+      }
     }
   },
   "libraries": {
@@ -147,6 +289,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Jurassic/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-n+GPG4Yl3MtxEDzbSJK0JzObL26i50fswcbG/mviQaTVl962IOF3+kIZHscVOlQ3b8jPisxpMat9bMWWZFOxPQ==",
+      "path": "jurassic/3.0.0",
+      "hashPath": "jurassic.3.0.0.nupkg.sha512"
+    },
+    "Markdig/0.38.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zKy3JFjQvr1wbuMtbfcZVjNNCIqHxSCjGMq/CBcyNsY/MPsxqcS3o8M7CZ2kcMGGIw5LI2ZZd8rFUaFeV6SvrQ==",
+      "path": "markdig/0.38.0",
+      "hashPath": "markdig.0.38.0.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
       "type": "package",
@@ -169,6 +325,27 @@
       "path": "microsoft.extensions.logging.abstractions/8.0.0",
       "hashPath": "microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512"
     },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Targets/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
+      "path": "microsoft.netcore.targets/1.1.0",
+      "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.Web.WebView2/1.0.2849.39": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mWyurCfuOGF2odk+Orflzpk017oBmLy11qiQTXpcc9ZWqhx2SfYDr2izplyxy2bCkWDSXCQpBDhU5u9+mhHlDQ==",
+      "path": "microsoft.web.webview2/1.0.2849.39",
+      "hashPath": "microsoft.web.webview2.1.0.2849.39.nupkg.sha512"
+    },
     "MiniExcel/1.34.2": {
       "type": "package",
       "serviceable": true,
@@ -182,6 +359,13 @@
       "sha512": "sha512-zRG5V8cyeZLpzJlKzFKjEwkRMYIYnHWJvEor2lWXeccS2E1G2nIWYYhnukB51iz5XsWSVEtqg3AxTWM0QJ6vfg==",
       "path": "npgsql/8.0.5",
       "hashPath": "npgsql.8.0.5.nupkg.sha512"
+    },
+    "Pek.Markdig.HighlightJs/0.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Gt/2/pG9wMRQmYVOdxnm10u+U5kXbGrT8R1McJ8JyTS3S5rfU7jwcpV7k3PhurZXjQPqrdyQsavM7xdQ/yPFOQ==",
+      "path": "pek.markdig.highlightjs/0.5.1",
+      "hashPath": "pek.markdig.highlightjs.0.5.1.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",
@@ -204,6 +388,13 @@
       "path": "system.diagnostics.diagnosticsource/8.0.0",
       "hashPath": "system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512"
     },
+    "System.IO/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
+      "path": "system.io/4.3.0",
+      "hashPath": "system.io.4.3.0.nupkg.sha512"
+    },
     "System.Memory/4.5.5": {
       "type": "package",
       "serviceable": true,
@@ -211,12 +402,54 @@
       "path": "system.memory/4.5.5",
       "hashPath": "system.memory.4.5.5.nupkg.sha512"
     },
+    "System.Reflection/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KMiAFoW7MfJGa9nDFNcfu+FpEdiHpWgTcS2HdMpDvt9saK3y/G4GwprPyzqjFH9NTaGPQeWNHU+iDlDILj96aQ==",
+      "path": "system.reflection/4.3.0",
+      "hashPath": "system.reflection.4.3.0.nupkg.sha512"
+    },
+    "System.Reflection.Emit.ILGeneration/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-59tBslAk9733NXLrUJrwNZEzbMAcu8k344OYo+wfSVygcgZ9lgBdGIzH/nrg3LYhXceynyvTc8t5/GD4Ri0/ng==",
+      "path": "system.reflection.emit.ilgeneration/4.3.0",
+      "hashPath": "system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512"
+    },
+    "System.Reflection.Emit.Lightweight/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oadVHGSMsTmZsAF864QYN1t1QzZjIcuKU3l2S9cZOwDdDueNTrqq1yRj7koFfIGEnKpt6NjpL3rOzRhs4ryOgA==",
+      "path": "system.reflection.emit.lightweight/4.3.0",
+      "hashPath": "system.reflection.emit.lightweight.4.3.0.nupkg.sha512"
+    },
+    "System.Reflection.Primitives/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5RXItQz5As4xN2/YUDxdpsEkMhvw3e6aNveFXUn4Hl/udNTCNhnKp8lT9fnc3MhvGKh1baak5CovpuQUXHAlIA==",
+      "path": "system.reflection.primitives/4.3.0",
+      "hashPath": "system.reflection.primitives.4.3.0.nupkg.sha512"
+    },
+    "System.Runtime/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
+      "path": "system.runtime/4.3.0",
+      "hashPath": "system.runtime.4.3.0.nupkg.sha512"
+    },
     "System.Runtime.CompilerServices.Unsafe/6.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
       "path": "system.runtime.compilerservices.unsafe/6.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    },
+    "System.Text.Encoding/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==",
+      "path": "system.text.encoding/4.3.0",
+      "hashPath": "system.text.encoding.4.3.0.nupkg.sha512"
     },
     "System.Text.Encodings.Web/8.0.0": {
       "type": "package",
@@ -239,12 +472,34 @@
       "path": "system.threading.channels/8.0.0",
       "hashPath": "system.threading.channels.8.0.0.nupkg.sha512"
     },
+    "System.Threading.Tasks/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
+      "path": "system.threading.tasks/4.3.0",
+      "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
+    },
     "System.Threading.Tasks.Extensions/4.5.4": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
       "path": "system.threading.tasks.extensions/4.5.4",
       "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+    },
+    "Microsoft.Web.WebView2.Core/1.0.2849.39": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Web.WebView2.WinForms/1.0.2849.39": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Web.WebView2.Wpf/1.0.2849.39": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по DISTINCT в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по DISTINCT в PostgreSQL</h1>
+
+    <p>Команда <code>DISTINCT</code> используется для удаления дубликатов из результатов запроса. Она позволяет возвращать только уникальные строки по указанным столбцам.</p>
+
+    <h2>1. Базовый синтаксис</h2>
+    <p>Синтаксис команды <code>DISTINCT</code>:</p>
+    <pre><code>SELECT DISTINCT "столбцы" FROM имя_схемы."имя_таблицы";</code></pre>
+
+    <p>Пример: найдём уникальные жанры книг из таблицы <code>books</code>:</p>
+    <pre><code>SELECT DISTINCT "Genre" FROM public."Movies";</code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example6.PNG" width="100%"/>
+
+    <h2>3. Использование DISTINCT с несколькими столбцами</h2>
+    <p>Команда <code>DISTINCT</code> может быть использована для возвращения уникальных комбинаций значений нескольких столбцов. Например, уникальные сочетания авторов и жанров:</p>
+    <pre><code>SELECT DISTINCT author, genre FROM books;</code></pre>
+
+    <h2>4. Ограничения DISTINCT</h2>
+    <ul>
+        <li><code>DISTINCT</code> применяется ко всем указанным столбцам, возвращая уникальные комбинации значений.</li>
+        <li>Для более сложных фильтраций дубликатов можно использовать агрегатные функции, но они не входят в этот урок.</li>
+    </ul>
+
+    <h2>Заключение</h2>
+    <p>Команда <code>DISTINCT</code> позволяет удалять дубликаты из результатов запроса, что делает её полезной для анализа данных и их упрощённого представления. Она легко используется и широко применяется при работе с PostgreSQL.</p>
+
+</body>
+</html>

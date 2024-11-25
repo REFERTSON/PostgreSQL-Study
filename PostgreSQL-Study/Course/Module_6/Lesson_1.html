@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по AVG в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по AVG в PostgreSQL</h1>
+
+    <p>Команда <code>AVG</code> используется для вычисления среднего значения числового столбца. Она полезна для анализа данных, таких как подсчёт среднего рейтинга, цены, года или другого числового показателя.</p>
+
+    <h2>1. Базовый синтаксис</h2>
+    <p>Синтаксис команды <code>AVG</code>:</p>
+    <pre><code>SELECT AVG("столбец") FROM имя_схемы."имя_таблицы";</code></pre>
+
+    <p>Пример: предположим, у нас есть таблица <code>Showtimes</code> (Покащы). Мы хотим вычислить среднюю цену всех показов:</p>
+    <pre><code>SELECT AVG("Price") AS "Средняя цена билета" FROM public."Showtimes";</code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example1.PNG" width="100%" />
+
+    <h2>2. Использование AVG с группировкой</h2>
+    <p>Вы можете использовать <code>AVG</code> для расчёта среднего значения по группам данных. Например, вычислим средний год публикации для каждого жанра:</p>
+    <pre><code>
+SELECT "Genre", AVG("Price") AS "Средняя цена билета" FROM public."Showtimes" S
+JOIN public."Movies" M ON M."ID_Movie" = S."ID_Movie"
+GROUP BY "Genre";
+    </code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example2.PNG" width="100%" />
+
+    <h2>3. Особенности использования AVG</h2>
+    <ul>
+        <li><code>AVG</code> игнорирует значения <code>NULL</code> в столбце.</li>
+        <li>Для округления результата можно использовать функции, такие как <code>ROUND</code>, но это не рассматривается в этом уроке.</li>
+    </ul>
+
+    <h2>Заключение</h2>
+    <p>Команда <code>AVG</code> предоставляет удобный способ расчёта среднего значения числовых данных в PostgreSQL. Она полезна для анализа данных и вычисления ключевых метрик.</p>
+
+</body>
+</html>

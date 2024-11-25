@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по SELECT в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по команде SELECT в PostgreSQL</h1>
+
+    <p>Команда <code>SELECT</code> используется для извлечения данных из базы данных. В PostgreSQL она позволяет выполнять простые и сложные запросы для получения нужной информации.</p>
+
+    <h2>1. Базовый запрос SELECT</h2>
+    <p>Для того чтобы выбрать все строки из таблицы, используйте следующий синтаксис:</p>
+    <pre><code>SELECT * FROM имя_схемы."имя_таблицы";</code></pre>
+
+    <p>Например, если у нас есть таблица <code>books</code> (книги), и мы хотим выбрать все данные из этой таблицы:</p>
+    <pre><code>SELECT * FROM public."Movies";</code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example1.PNG" width="100%" />
+
+    <h2>3. Выбор конкретных столбцов</h2>
+    <p>Если вам нужно выбрать только некоторые столбцы, вы можете указать их в запросе. Например, если мы хотим получить только названия и жанр фильма, используем следующий запрос:</p>
+    <pre><code>SELECT "Title", "Genre" FROM public."Movies";</code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example2.PNG" width="100%"/>
+
+    <h2>Заключение</h2>
+    <p>Команда <code>SELECT</code> — это мощный инструмент для работы с данными в PostgreSQL. Она позволяет извлекать, фильтровать, сортировать и агрегировать данные для получения нужной информации. Вы можете комбинировать различные операторы и функции для создания сложных запросов.</p>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по UNION в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по UNION в PostgreSQL</h1>
+
+    <p>Команда <code>UNION</code> используется для объединения результатов двух или более запросов. Она удаляет дублирующиеся строки, возвращая только уникальные результаты. Если нужно сохранить дубли, используется <code>UNION ALL</code>.</p>
+
+    <h2>1. Базовый синтаксис</h2>
+    <p>Синтаксис команды <code>UNION</code>:</p>
+    <pre>
+    <code>
+SELECT "столбцы" FROM имя_схемы."имя_таблица1"
+UNION
+SELECT "столбцы" FROM имя_схемы."имя_таблица2";
+    </code></pre>
+
+    <p>Пример: предположим, у нас есть таблица <code>Tickets</code> (Билеты), и мы хотим объединить список покупателей, которые купили билеты, с покупателями, указанными в таблице <code>Customers</code>:</p>
+    <pre><code>
+SELECT "ID_Customer" FROM public."Tickets"
+UNION
+SELECT "ID_Customer" FROM public."Customers";
+    </code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example1.PNG" width="100%" />
+
+    <h2>2. Использование UNION ALL</h2>
+    <p>Если нужно сохранить дублирующиеся строки, используется <code>UNION ALL</code>. Например:</p>
+    <pre><code>
+SELECT author FROM books
+UNION ALL
+SELECT author FROM popular_authors;
+    </code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example2.PNG" width="100%" />
+
+    <h2>4. Особенности использования UNION</h2>
+    <ul>
+        <li>Столбцы, возвращаемые запросами, должны иметь одинаковый тип данных и порядок.</li>
+        <li>Количество столбцов в каждом запросе должно совпадать.</li>
+        <li>Для упорядочивания объединённых данных можно использовать <code>ORDER BY</code>, но только после завершения всех запросов <code>UNION</code>.</li>
+    </ul>
+
+    <h2>Заключение</h2>
+    <p>Команда <code>UNION</code> позволяет объединять результаты нескольких запросов, удаляя дубликаты. Для сохранения дубликатов используйте <code>UNION ALL</code>. Это удобный инструмент для объединения данных из разных источников в PostgreSQL.</p>
+
+</body>
+</html>

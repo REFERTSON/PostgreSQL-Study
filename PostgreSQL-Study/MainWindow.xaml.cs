@@ -120,20 +120,11 @@ namespace PostgreSQL_Study
             if (currentPage is Inquirer)
             {
                 ConnectionString = $"Server={ServerName};Port={ServerPort};Database={DatabaseName}; User Id={UserName}; Password={UserPassword};";
-
-                Inquirer_Start.IsEnabled = true;
-                Inquirer_Clear.IsEnabled = true;
-                Inquirer_Export.IsEnabled = true;
-                
                 SaveFileButton.IsEnabled = true;
             }
 
             else
             {
-                Inquirer_Start.IsEnabled = false;
-                Inquirer_Clear.IsEnabled = false;
-                Inquirer_Export.IsEnabled = false;
-
                 SaveFileButton.IsEnabled = false;
             }
         }
@@ -146,7 +137,6 @@ namespace PostgreSQL_Study
 
                 if (tag != null)
                     MainFrame.Navigate(new CourseItemViewer($"{Directory.GetCurrentDirectory()}\\{tag.ToString()}"));
-                    
             }
         }
 

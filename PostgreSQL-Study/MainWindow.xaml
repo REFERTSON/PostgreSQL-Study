@@ -54,32 +54,13 @@
                 <MenuItem x:Name="Inquirer"
                           Header="Новый запрос"
                           Click="Inquirer_Click"/>
-                
-                <Separator/>
-
-                <MenuItem x:Name="Inquirer_Start"
-                          Header="Запустить"
-                          IsEnabled="False"/>
-
-                <MenuItem x:Name="Inquirer_Clear"
-                          Header="Очистить"
-                          IsEnabled="False"/>
-
-                <MenuItem x:Name="Inquirer_Export"
-                          Header="Экспорт"
-                          IsEnabled="False"/>
             </MenuItem>
             <MenuItem Header="Справка"
                       Height="20"
                       Margin="0,1,0,0">
-                
-                <MenuItem x:Name="InstructionButton"
-                          Header="Инструкция"
-                          Click="OpenHTMLDocument_Click"
-                          Tag="Course/index.html"/>
-                
                 <MenuItem x:Name="AboutProgram"
-                          Header="О программе" Click="AboutProgram_Click"/>
+                          Header="О программе" 
+                          Click="AboutProgram_Click"/>
             </MenuItem>
         </Menu>
 
@@ -119,17 +100,16 @@
                     <Expander Style="{StaticResource ExpanderStyle}"
                               Expanded="Expander_Expanded">
                         <Expander.Header>
-                            <TextBlock Text="Модуль 1: Введение в PostgreSQL" 
+                            <TextBlock Text="Модуль 1: Основные операции с данными" 
                                        TextWrapping="Wrap"/>
                         </Expander.Header>
 
                         <StackPanel>
-                            <Button Content="Введение в базы данных"
-                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
-                            <Button Content="Введение в PostgreSQL"
-                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
-                            <Button Content="Создание базы данных и таблиц"
-                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
+
+                            <Button Content="Извлечение данных (SELECT)"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_2/Lesson_1.html"
+                                    Click="OpenHTMLDocument_Click"/>
                         </StackPanel>
                     </Expander>
 
@@ -137,19 +117,44 @@
                     <Expander Style="{StaticResource ExpanderStyle}"
                               Expanded="Expander_Expanded">
                         <Expander.Header>
-                            <TextBlock Text="Модуль 2: Основные операции с данными" 
+                            <TextBlock Text="Модуль 2: Фильтрация и сортировка данных" 
                                        TextWrapping="Wrap"/>
                         </Expander.Header>
 
                         <StackPanel>
-                            <Button Content="Вставка данных (INSERT)"
-                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
-                            <Button Content="Извлечение данных (SELECT)"
-                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
-                            <Button Content="Обновление данных (UPDATE)"
-                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
-                            <Button Content="Удаление данных (DELETE)"
-                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                            <Button Content="Условия выборки (WHERE)"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_3/Lesson_1.html"
+                                    Click="OpenHTMLDocument_Click"/>
+                            
+                            <Button Content="Условия выборки (HAVING)"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_3/Lesson_2.html"
+                                    Click="OpenHTMLDocument_Click"/>
+                            
+                            <Button Content="Фильтрация (BETWEEN / IN/ NOT IN)"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_3/Lesson_3.html"
+                                    Click="OpenHTMLDocument_Click"/>
+                            
+                            <Button Content="Группировка (GROUP BY)"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_3/Lesson_4.html"
+                                    Click="OpenHTMLDocument_Click"/>
+                            
+                            <Button Content="Сортировка выборки (ORDER BY)"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_3/Lesson_5.html"
+                                    Click="OpenHTMLDocument_Click"/>
+                            
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_3/Lesson_6.html"
+                                    Click="OpenHTMLDocument_Click">
+                                <Button.Content>
+                                    <TextBlock Text="Ограничение и смещение результатов запросов (LIMIT/OFFSET)" 
+                                               TextWrapping="Wrap"/>
+                                </Button.Content>
+                            </Button>
                         </StackPanel>
                     </Expander>
 
@@ -157,24 +162,43 @@
                     <Expander Style="{StaticResource ExpanderStyle}"
                               Expanded="Expander_Expanded">
                         <Expander.Header>
-                            <TextBlock Text="Модуль 3: Фильтрация и сортировка данных" 
+                            <TextBlock Text="Модуль 3: Объединение и преобразование данных" 
                                        TextWrapping="Wrap"/>
                         </Expander.Header>
 
                         <StackPanel>
-                            <Button Content="Условия выборки (WHERE)"
-                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
-                            <Button Content="Условия выборки (HAVING)"
-                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
-                            <Button Content="Фильтрация (BETWEEN / IN/ NOT IN)"
-                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
-                            <Button Content="Группировка (GROUP BY)"
-                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
-                            <Button Content="Сортировка выборки (ORDER BY)"
-                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
-                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_4/Lesson_1.html"
+                                    Click="OpenHTMLDocument_Click">
                                 <Button.Content>
-                                    <TextBlock Text="Ограничение и смещение результатов запросов (LIMIT/OFFSET)" 
+                                    <TextBlock Text="Объединение результатов (UNION)" 
+                                               TextWrapping="Wrap"/>
+                                </Button.Content>
+                            </Button>
+
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_4/Lesson_2.html"
+                                    Click="OpenHTMLDocument_Click">
+                                <Button.Content>
+                                    <TextBlock Text="Пересечение результатов (INTERSECT)" 
+                                               TextWrapping="Wrap"/>
+                                </Button.Content>
+                            </Button>
+
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_4/Lesson_3.html"
+                                    Click="OpenHTMLDocument_Click">
+                                <Button.Content>
+                                    <TextBlock Text="Разница между результатами (EXCEPT)" 
+                                               TextWrapping="Wrap"/>
+                                </Button.Content>
+                            </Button>
+
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_4/Lesson_4.html"
+                                    Click="OpenHTMLDocument_Click">
+                                <Button.Content>
+                                    <TextBlock Text="Вывод уникальны значений (DISTINCT)" 
                                                TextWrapping="Wrap"/>
                                 </Button.Content>
                             </Button>
@@ -185,38 +209,39 @@
                     <Expander Style="{StaticResource ExpanderStyle}"
                               Expanded="Expander_Expanded">
                         <Expander.Header>
-                            <TextBlock Text="Модуль 4: Объединение и преобразование данных" 
+                            <TextBlock Text="Модуль 4: Соединение таблиц" 
                                        TextWrapping="Wrap"/>
                         </Expander.Header>
 
                         <StackPanel>
-                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_5/Lesson_1.html"
+                                    Click="OpenHTMLDocument_Click">
                                 <Button.Content>
-                                    <TextBlock Text="Объединение результатов (UNION)" 
+                                    <TextBlock Text="Соединение таблиц по общим значениям (INNER JOIN)" 
                                                TextWrapping="Wrap"/>
                                 </Button.Content>
                             </Button>
-
-                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_5/Lesson_2.html"
+                                    Click="OpenHTMLDocument_Click">
                                 <Button.Content>
-                                    <TextBlock Text="Пересечение результатов (INTERSECT)" 
+                                    <TextBlock Text="Соединение с левым приоритетом (LEFT JOIN)" 
+                                                     TextWrapping="Wrap"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_5/Lesson_3.html"
+                                    Click="OpenHTMLDocument_Click">
+                                <Button.Content>
+                                    <TextBlock Text="Соединение с правым приоритетом (RIGHT JOIN)" 
                                                TextWrapping="Wrap"/>
                                 </Button.Content>
                             </Button>
-
-                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
-                                <Button.Content>
-                                    <TextBlock Text="Разница между результатами (EXCEPT)" 
-                                               TextWrapping="Wrap"/>
-                                </Button.Content>
-                            </Button>
-
-                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
-                                <Button.Content>
-                                    <TextBlock Text="Вывод уникальны значений (DISTINCT)" 
-                                               TextWrapping="Wrap"/>
-                                </Button.Content>
-                            </Button>
+                            <Button Content="Все комбинации (CROSS JOIN)"
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_5/Lesson_4.html"
+                                    Click="OpenHTMLDocument_Click"/>
                         </StackPanel>
                     </Expander>
 
@@ -224,56 +249,30 @@
                     <Expander Style="{StaticResource ExpanderStyle}"
                               Expanded="Expander_Expanded">
                         <Expander.Header>
-                            <TextBlock Text="Модуль 5: Соединение таблиц" 
+                            <TextBlock Text="Модуль 5: Агрегатные функции" 
                                        TextWrapping="Wrap"/>
                         </Expander.Header>
 
                         <StackPanel>
-                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
-                                <Button.Content>
-                                    <TextBlock Text="Соединение таблиц по общим значениям (INNER JOIN)" 
-                                               TextWrapping="Wrap"/>
-                                </Button.Content>
-                            </Button>
-                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
-                                <Button.Content>
-                                    <TextBlock Text="Соединение с левым приоритетом (LEFT JOIN)" 
-                                                     TextWrapping="Wrap"/>
-                                </Button.Content>
-                            </Button>
-                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
-                                <Button.Content>
-                                    <TextBlock Text="Соединение с правым приоритетом (RIGHT JOIN)" 
-                                               TextWrapping="Wrap"/>
-                                </Button.Content>
-                            </Button>
-                            <Button Content="Все комбинации (CROSS JOIN)"
-                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
-                        </StackPanel>
-                    </Expander>
-
-                    <!-- Модуль 6 -->
-                    <Expander Style="{StaticResource ExpanderStyle}"
-                              Expanded="Expander_Expanded">
-                        <Expander.Header>
-                            <TextBlock Text="Модуль 6: Агрегатные функции" 
-                                       TextWrapping="Wrap"/>
-                        </Expander.Header>
-
-                        <StackPanel>
-                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_6/Lesson_1.html"
+                                    Click="OpenHTMLDocument_Click">
                                 <Button.Content>
                                     <TextBlock Text="Функция для вычисления среднего значения (AVG)" 
                                                TextWrapping="Wrap"/>
                                 </Button.Content>
                             </Button>
-                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_6/Lesson_2.html"
+                                    Click="OpenHTMLDocument_Click">
                                 <Button.Content>
                                     <TextBlock Text="Функция для суммирования значений (SUM)" 
                                                TextWrapping="Wrap"/>
                                 </Button.Content>
                             </Button>
-                            <Button Style="{StaticResource ExpanderMenuButtonTheme}">
+                            <Button Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_6/Lesson_3.html"
+                                    Click="OpenHTMLDocument_Click">
                                 <Button.Content>
                                     <TextBlock Text="Функция для подсчета записей (COUNT)" 
                                                TextWrapping="Wrap"/>
@@ -286,13 +285,15 @@
                     <Expander Style="{StaticResource ExpanderStyle}"
                               Expanded="Expander_Expanded">
                         <Expander.Header>
-                            <TextBlock Text="Модуль 6: Агрегатные функции" 
+                            <TextBlock Text="Модуль 6: Подзапросы" 
                                        TextWrapping="Wrap"/>
                         </Expander.Header>
 
                         <StackPanel>
                             <Button Content="Введение в подзапросы"
-                                    Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                                    Style="{StaticResource ExpanderMenuButtonTheme}"
+                                    Tag="Course/Module_7/Lesson_1.html"
+                                    Click="OpenHTMLDocument_Click"/>
                         </StackPanel>
                     </Expander>
                 </StackPanel>
@@ -305,11 +306,16 @@
 
                 <Button x:Name="DatabaseDiagramButton"
                         Content="Диаграмма БД"
-                        Style="{StaticResource ExpanderMenuButtonTheme}" Click="DatabaseDiagramButton_Click"/>
+                        Style="{StaticResource ExpanderMenuButtonTheme}" 
+                        Click="DatabaseDiagramButton_Click"/>
                 <Button Content="Описание БД"
-                        Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                        Style="{StaticResource ExpanderMenuButtonTheme}"
+                        Tag="Course/Database/DatabaseDescription.html"
+                        Click="OpenHTMLDocument_Click"/>
                 <Button Content="Содержание БД"
-                        Style="{StaticResource ExpanderMenuButtonTheme}"/>
+                        Style="{StaticResource ExpanderMenuButtonTheme}"
+                        Tag="Course/Database/DatabaseContent.html"
+                        Click="OpenHTMLDocument_Click"/>
             </StackPanel>
         </Grid>
 

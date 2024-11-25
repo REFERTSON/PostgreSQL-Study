@@ -77,6 +77,7 @@ namespace PostgreSQL_Study.View
             InquirerItemTable.ItemsSource = null;
             MessageResult.Text = "";
             TabResult.SelectedIndex = 0;
+            _table = new DataTable();
 
             Match match = Regex.Match(QueryTextBox.Text, pattern, RegexOptions.IgnoreCase);
 

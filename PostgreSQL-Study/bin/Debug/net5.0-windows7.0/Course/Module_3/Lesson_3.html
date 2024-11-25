@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по BETWEEN, IN и NOT IN в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по BETWEEN, IN и NOT IN в PostgreSQL</h1>
+
+    <p>В PostgreSQL команды <code>BETWEEN</code>, <code>IN</code> и <code>NOT IN</code> используются для фильтрации данных. Эти команды позволяют упрощать запросы и делать их более понятными.</p>
+
+    <h2>1. Команда BETWEEN</h2>
+    <p>Команда <code>BETWEEN</code> используется для проверки, входит ли значение в указанный диапазон (включительно).</p>
+
+    <h3>Синтаксис:</h3>
+    <pre><code>SELECT "столбцы" FROM имя_схемы."имя_таблицы" WHERE "столбец" BETWEEN значение1 AND значение2;</code></pre>
+
+    <p>Пример: найдём все фильмы, опубликованные с 2010 по 2018 год:</p>
+    <pre><code>SELECT * FROM public."Movies" WHERE "Release_Year" BETWEEN 2010 AND 2018;</code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example7.PNG" width="100%" />
+
+    <h2>2. Команда IN</h2>
+    <p>Команда <code>IN</code> используется для проверки, совпадает ли значение с одним из перечисленных.</p>
+
+    <h3>Синтаксис:</h3>
+    <pre><code>SELECT столбцы FROM имя_таблицы WHERE столбец IN (значение1, значение2, значение3);</code></pre>
+
+    <p>Пример: найдём все книги жанров "Боевик" или "Анимация":</p>
+    <pre><code>SELECT * FROM public."Movies" WHERE "Genre" IN ('Боевик', 'Анимация');</code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example8.PNG" width="100%" />
+
+    <h2>3. Команда NOT IN</h2>
+    <p>Команда <code>NOT IN</code> используется для исключения значений из перечисленных.</p>
+
+    <h3>Синтаксис:</h3>
+    <pre><code>SELECT столбцы FROM имя_таблицы WHERE столбец NOT IN (значение1, значение2, значение3);</code></pre>
+
+    <p>Пример: найдём все фильмы, которые не относятся к жанрам "Фантастика" или "Детектив":</p>
+    <pre><code>SELECT * FROM public."Movies" WHERE "Genre" NOT IN ('Фантастика', 'Детектив');</code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example9.PNG" width="100%" />
+
+    <h2>4. Сравнение BETWEEN, IN и NOT IN</h2>
+    <p>Эти команды служат для различных целей:</p>
+    <ul>
+        <li><code>BETWEEN</code> удобен для работы с диапазонами значений (например, годов).</li>
+        <li><code>IN</code> удобен, когда нужно проверить совпадение со списком значений.</li>
+        <li><code>NOT IN</code> позволяет исключить определённые значения из выборки.</li>
+    </ul>
+
+    <h2>Заключение</h2>
+    <p>Команды <code>BETWEEN</code>, <code>IN</code> и <code>NOT IN</code> позволяют упростить запросы, делая их более выразительными и удобными для чтения. Их использование повышает гибкость работы с базой данных PostgreSQL.</p>
+
+</body>
+</html>

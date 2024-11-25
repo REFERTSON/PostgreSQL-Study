@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по COUNT в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по COUNT в PostgreSQL</h1>
+
+    <p>Команда <code>COUNT</code> используется для подсчёта количества строк или значений в столбце. Она полезна для анализа данных, например, для подсчёта общего количества записей, уникальных значений или записей с определённым условием.</p>
+
+    <h2>1. Базовый синтаксис</h2>
+    <p>Синтаксис команды <code>COUNT</code>:</p>
+    <pre><code>SELECT COUNT(столбец) FROM таблица;</code></pre>
+
+    <p>Пример: предположим, у нас есть таблица <code>Movies</code> (Фильмы). Мы хотим узнать общее количество фильмов в таблице:</p>
+    <pre><code>SELECT COUNT(*) AS "Кол-во фильмов" FROM public."Movies";</code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example4.PNG" width="100%" />
+
+    <h2>2. Использование COUNT для подсчёта уникальных значений</h2>
+    <p>Если вам нужно подсчитать уникальные значения в столбце, используйте <code>COUNT(DISTINCT столбец)</code>. Например, подсчитаем количество уникальных жанров:</p>
+    <pre><code>SELECT COUNT(DISTINCT "Genre") AS "Кол-во жанров" FROM public."Movies";</code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example5.PNG" width="100%" />
+
+    <h2>Заключение</h2>
+    <p>Команда <code>COUNT</code> позволяет легко подсчитывать строки, уникальные значения или записи, соответствующие определённым условиям. Она является важным инструментом для анализа данных в PostgreSQL.</p>
+
+</body>
+</html>

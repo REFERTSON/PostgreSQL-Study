@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по ORDER BY в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по ORDER BY в PostgreSQL</h1>
+
+    <p>Команда <code>ORDER BY</code> используется для сортировки результатов запроса в PostgreSQL. Вы можете упорядочить строки по одному или нескольким столбцам в порядке возрастания или убывания.</p>
+
+    <h2>1. Базовый синтаксис</h2>
+    <p>Синтаксис команды <code>ORDER BY</code>:</p>
+    <pre><code>SELECT "столбцы" FROM имя_схемы."имя_таблицы" ORDER BY столбец [ASC|DESC];</code></pre>
+
+    <p>По умолчанию используется сортировка по возрастанию (<code>ASC</code>).</p>
+
+    <h2>2. Пример: сортировка по году публикации</h2>
+    <p>Рассмотрим пример, в котором книги сортируются по году публикации:</p>
+    <pre><code>SELECT * FROM public."Movies" ORDER BY "Release_Year";</code></pre>
+
+    <p>Этот запрос вернёт список фильмов, упорядоченных по году выпуска от самого раннего к самому позднему.</p>
+
+    <img src="{% BASEDIR %}\Image\Example13.PNG" width="100%" />
+
+    <h2>3. Сортировка по убыванию</h2>
+    <p>Чтобы отсортировать данные в порядке убывания, используйте ключевое слово <code>DESC</code>. Например, фильмы в обратном хронологическом порядке:</p>
+    <pre><code>SELECT * FROM public."Movies" ORDER BY "Release_Year" DESC;</code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example14.PNG" width="100%" />
+
+
+    <h2>4. Сортировка по нескольким столбцам</h2>
+    <p>Вы можете упорядочивать результаты по нескольким столбцам. Например, сначала по жанру, а затем по году выпуска:</p>
+    <pre><code>SELECT "Title", "Genre", "Release_Year" FROM public."Movies" ORDER BY "Genre", "Release_Year";</code></pre>
+
+    <p>Этот запрос сначала сортирует фильмы по жанру, а внутри каждого жанра — по году публикации.</p>
+
+    <img src="{% BASEDIR %}\Image\Example15.PNG" width="100%" />
+
+    <h2>Заключение</h2>
+    <p>Команда <code>ORDER BY</code> является мощным инструментом для сортировки данных в запросах PostgreSQL. Она позволяет организовывать результаты так, как это необходимо для анализа или представления данных.</p>
+
+</body>
+</html>

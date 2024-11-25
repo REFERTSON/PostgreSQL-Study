@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по подзапросам в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по подзапросам в PostgreSQL</h1>
+
+    <p>Подзапросы — это запросы, которые выполняются внутри других запросов. Они позволяют использовать результат одного запроса в качестве входных данных для другого.</p>
+
+    <h2>1. Базовый синтаксис</h2>
+    <p>Подзапрос записывается в круглых скобках и используется в таких конструкциях, как <code>SELECT</code>, <code>WHERE</code>, <code>FROM</code> или <code>HAVING</code>.</p>
+    <pre><code>
+SELECT "столбцы" FROM имя_схемы."имя_таблицы".
+WHERE [условие] (подзапрос);
+    </code></pre>
+
+    <h2>2. Пример подзапроса в WHERE</h2>
+    <p>Предположим, у нас есть таблица <code>Movies</code> (Фильмы), и мы хотим найти фильм с самой старой датой выпуска:</p>
+    <pre><code>
+SELECT * FROM public."Movies"
+WHERE "Release_Year" IN (SELECT MIN("Release_Year") FROM public."Movies");
+    </code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example1.PNG" width="100%" />
+
+    <h2>3. Пример подзапроса в SELECT</h2>
+    <p>Вы можете использовать подзапрос в списке столбцов для расчёта дополнительных данных. Например, выберем все книги вместе с разницей между годом публикации каждого и самой старого фильмы:</p>
+    <pre><code>
+SELECT "Title", "Release_Year", "Release_Year" - (SELECT MIN("Release_Year") FROM public."Movies") AS "Разница"
+FROM public."Movies";
+    </code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example2.PNG" width="100%" />
+
+    <h2>4. Пример подзапроса в FROM</h2>
+    <p>Подзапросы можно использовать как временные таблицы в секции <code>FROM</code>. Например, найдём возраст каждого фильма:</p>
+    <pre><code>
+SELECT "Title", EXTRACT(YEAR FROM CURRENT_DATE) - "Release_Year" AS "Возраст фильма"
+FROM (SELECT "Title", "Release_Year" FROM public."Movies");
+    </code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example3.PNG" width="100%" />
+
+    <h2>5. Особенности использования подзапросов</h2>
+    <ul>
+        <li>Подзапросы могут возвращать одно значение, множество значений или таблицу, в зависимости от контекста.</li>
+        <li>Подзапросы часто используются для создания сложных фильтров или вычислений.</li>
+        <li>Для повышения производительности при частом использовании подзапросов можно рассмотреть материализованные представления.</li>
+    </ul>
+
+    <h2>Заключение</h2>
+    <p>Подзапросы — это мощный инструмент в PostgreSQL, позволяющий создавать гибкие и динамичные запросы. Они помогают организовать сложные вычисления и фильтрацию данных в простом и понятном виде.</p>
+
+</body>
+</html>

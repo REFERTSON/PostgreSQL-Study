@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по LIMIT и OFFSET в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по LIMIT и OFFSET в PostgreSQL</h1>
+
+    <p>Команды <code>LIMIT</code> и <code>OFFSET</code> используются для ограничения количества возвращаемых строк и управления выборкой данных в PostgreSQL. Они особенно полезны при постраничном выводе данных.</p>
+
+    <h2>1. LIMIT</h2>
+    <p>Команда <code>LIMIT</code> задаёт максимальное количество строк, которые должны быть возвращены запросом.</p>
+
+    <h3>Синтаксис:</h3>
+    <pre><code>SELECT "столбцы" FROM имя_схемы."имя_таблицы" LIMIT количество_строк;</code></pre>
+
+    <p>Пример: выберем первые 5 фильмов из таблицы <code>Movies</code>:</p>
+    <pre><code>SELECT * FROM public."Movies" LIMIT 5;</code></pre>
+
+    <p>Этот запрос вернёт только 5 строк из таблицы.</p>
+
+    <img src="{% BASEDIR %}\Image\Example16.PNG" width="100%" />
+
+    <h2>2. OFFSET</h2>
+    <p>Команда <code>OFFSET</code> пропускает заданное количество строк перед началом возврата данных.</p>
+
+    <h3>Синтаксис:</h3>
+    <pre><code>SELECT "столбцы" FROM имя_схемы."имя_таблицы" OFFSET количество_строк;</code></pre>
+
+    <p>Пример: пропустим первые 5 строк и выведем все последующие:</p>
+    <pre><code>SELECT * FROM public."Movies" OFFSET 5;</code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example17.PNG" width="100%" />
+
+    <h2>3. Комбинация LIMIT и OFFSET</h2>
+    <p>Вы можете комбинировать <code>LIMIT</code> и <code>OFFSET</code>, чтобы вывести данные с определённого места в таблице. Это полезно для реализации постраничного вывода данных.</p>
+
+    <h3>Синтаксис:</h3>
+    <pre><code>SELECT "столбцы" FROM имя_схемы."имя_таблицы" LIMIT количество_строк OFFSET смещение;</code></pre>
+
+    <p>Пример: выберем 5 фильмов, начиная с шестого:</p>
+    <pre><code>SELECT * FROM public."Movies" LIMIT 5 OFFSET 5;</code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example18.PNG" width="100%" />
+
+    <h2>Заключение</h2>
+    <p>Команды <code>LIMIT</code> и <code>OFFSET</code> предоставляют удобные способы управления количеством строк, возвращаемых запросом. Они особенно полезны при работе с большими таблицами или создании интерфейсов постраничного просмотра данных.</p>
+
+</body>
+</html>

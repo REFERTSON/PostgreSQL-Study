@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по INNER JOIN в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по INNER JOIN в PostgreSQL</h1>
+
+    <p>Команда <code>INNER JOIN</code> используется для соединения строк из двух таблиц на основе совпадающих значений в указанных столбцах. Если значения совпадают, строки включаются в результат.</p>
+
+    <h2>1. Базовый синтаксис</h2>
+    <p>Синтаксис команды <code>INNER JOIN</code>:</p>
+    <pre><code>
+SELECT "столбцы" FROM имя_схемы."таблица1" идентификатор1
+INNER JOIN имя_схемы."таблица2" идентификатор2 ON идентификатор1."столбец" = идентификатор2."столбец";
+    </code></pre>
+
+    <p>Пример: предположим, у нас есть таблицы <code>Movies</code> (Фильмы) и <code>Showtimes</code> (Показы). Таблица <code>Movies</code> содержит информацию о фильмах, а <code>Showtimes</code> — о покуазах. Мы хотим получить расписание фильмов:</p>
+    <pre><code>
+SELECT "Title", "Genre", "Start_Time", "ID_Hall" FROM public."Movies" M
+INNER JOIN public."Showtimes" S ON S."ID_Movie" = M."ID_Movie";
+    </code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example1.PNG" width="100%" />
+
+    <h2>2. Особенности использования INNER JOIN</h2>
+    <ul>
+        <li>Только строки с совпадающими значениями в указанных столбцах обеих таблиц включаются в результат.</li>
+        <li>Если совпадений нет, строка из обеих таблиц не будет включена в результат.</li>
+        <li>Вы можете использовать <code>INNER JOIN</code> с несколькими таблицами, добавляя новые соединения.</li>
+    </ul>
+
+    <h2>Заключение</h2>
+    <p>Команда <code>INNER JOIN</code> является основным инструментом для соединения таблиц в PostgreSQL. Она позволяет объединять данные из связанных таблиц, основываясь на совпадении значений в определённых столбцах.</p>
+
+</body>
+</html>

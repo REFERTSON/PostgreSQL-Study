@@ -24,8 +24,12 @@ namespace PostgreSQL_Study.View
         {
             InitializeComponent();
 
-            if (File.Exists(file_path)) 
-                CourseView.NavigateToString(File.ReadAllText(file_path, Encoding.UTF8).Replace("{% BASE_DIR %}", Path.GetDirectoryName(file_path)));
+            try
+            {
+                if (File.Exists(file_path))
+                    CourseView.NavigateToString(File.ReadAllText(file_path, Encoding.UTF8).Replace("{% BASEDIR %}", Path.GetDirectoryName(file_path)));
+            }
+            catch { }
         }
     }
 }

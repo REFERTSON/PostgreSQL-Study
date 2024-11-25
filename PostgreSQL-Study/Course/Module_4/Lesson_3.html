@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по EXCEPT в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по EXCEPT в PostgreSQL</h1>
+
+    <p>Команда <code>EXCEPT</code> используется для получения строк, которые присутствуют в одном запросе, но отсутствуют в другом. Она позволяет вычислить разницу между результатами двух запросов.</p>
+
+    <h2>1. Базовый синтаксис</h2>
+    <p>Синтаксис команды <code>EXCEPT</code>:</p>
+    <pre><code>
+SELECT "столбцы" FROM имя_схемы."имя_таблица1"
+EXCEPT
+SELECT "столбцы" FROM имя_схемы."имя_таблица2";
+    </code></pre>
+
+    <p>Пример: предположим, у нас есть таблица <code>Customers</code> (Покупатели), и мы хотим найти покупателей, которые есть в таблице <code>Customers</code>, но отсутствуют в таблице <code>Tickets</code>:</p>
+    <pre><code>
+SELECT "ID_Customer" FROM public."Customers"
+EXCEPT
+SELECT "ID_Customer" FROM public."Tickets";
+    </code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example4.PNG" width="100%" />
+
+    <h2>3. Особенности использования EXCEPT</h2>
+    <ul>
+        <li>Все запросы, объединённые с помощью <code>EXCEPT</code>, должны возвращать одинаковое количество столбцов.</li>
+        <li>Типы данных соответствующих столбцов должны быть совместимы.</li>
+        <li>Результаты <code>EXCEPT</code> автоматически удаляют дублирующиеся строки.</li>
+        <li>Для сохранения всех строк, включая дубли, можно использовать <code>EXCEPT ALL</code>.</li>
+    </ul>
+
+    <h2>4. Комбинация с EXCEPT ALL</h2>
+    <p>Если нужно учитывать дубли, можно использовать <code>EXCEPT ALL</code>. Например:</p>
+    <pre><code>
+SELECT "ID_Customer" FROM public."Tickets"
+EXCEPT ALL
+SELECT "ID_Customer" FROM public."Customers";
+    </code></pre>
+
+    <p>Этот запрос вернёт строки, которые присутствуют в первой таблице, но не во второй, с учётом количества повторений.</p>
+
+    <img src="{% BASEDIR %}\Image\Example5.PNG" width="100%" />
+
+    <h2>Заключение</h2>
+    <p>Команда <code>EXCEPT</code> предоставляет удобный способ вычислить разницу между результатами двух запросов. Она особенно полезна для выявления уникальных данных в PostgreSQL.</p>
+
+</body>
+</html>

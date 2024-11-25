@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок по HAVING в PostgreSQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Урок по команде HAVING в PostgreSQL</h1>
+
+    <p>Команда <code>HAVING</code> используется для фильтрации данных после группировки (<code>GROUP BY</code>) в запросах PostgreSQL. Она позволяет накладывать условия на группы данных.</p>
+
+    <h2>1. Базовый синтаксис</h2>
+    <p>Синтаксис команды <code>HAVING</code>:</p>
+    <pre><code>SELECT "столбцы и/или агрегатная функция" FROM имя_схемы."имя_таблицы" GROUP BY "столбцы" HAVING условие;</code></pre>
+
+    <p>Например, если у нас есть таблица <code>Movies</code> (фильмы), и мы хотим найти жанры с количеством фильмов больше 4:</p>
+    <pre><code>SELECT "Genre", COUNT(*) AS "Кол-во фильмов" FROM public."Movies" GROUP BY "Genre" HAVING COUNT(*) > 4;</code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example4.PNG" width="100%" />
+
+    <h2>3. Использование HAVING с агрегатными функциями</h2>
+    <p>Команда <code>HAVING</code> часто используется вместе с агрегатными функциями, такими как <code>COUNT</code>, <code>SUM</code>, <code>AVG</code>, <code>MAX</code>, и <code>MIN</code>.</p>
+
+    <p>Например, чтобы найти фильмы в жанрах, которые самые продолжительные</p>
+    <pre>
+    <code>
+    SELECT "Title", "Genre", "Duration" FROM public."Movies"
+    GROUP BY "Title", "Genre", "Duration"
+    HAVING ("Genre", MAX("Duration")) IN (
+        SELECT "Genre", MAX("Duration")
+        FROM public."Movies"
+        GROUP BY "Genre"
+    );
+    </code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example5.PNG" width="100%" />
+
+    <h2>4. Комбинация условий в HAVING</h2>
+    <p>Можно комбинировать условия с помощью логических операторов, таких как <code>AND</code> и <code>OR</code>.</p>
+
+    <p>Например, выберем жанры, в которых больше 3 фильмов и где средний год публикации позже 2015:</p>
+    <pre>
+    <code>
+    SELECT "Genre", COUNT(*) AS "Кол-во фильмов", ROUND(AVG("Release_Year")) AS "Средний год выпуска" 
+    FROM public."Movies"
+    GROUP BY "Genre"
+    HAVING COUNT(*) > 3 AND AVG("Release_Year") > 2015;
+    </code></pre>
+
+    <img src="{% BASEDIR %}\Image\Example6.PNG" width="100%" />
+
+    <h2>5. Отличие HAVING от WHERE</h2>
+    <p><code>WHERE</code> фильтрует строки до группировки, а <code>HAVING</code> применяется к группам после выполнения группировки (<code>GROUP BY</code>).</p>
+
+    <h2>Заключение</h2>
+    <p>Команда <code>HAVING</code> — это мощный инструмент для анализа сгруппированных данных. Она позволяет фильтровать группы по условиям, что делает её незаменимой в сложных запросах PostgreSQL.</p>
+
+</body>
+</html>
