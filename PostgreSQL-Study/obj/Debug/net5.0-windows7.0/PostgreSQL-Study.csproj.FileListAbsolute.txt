@@ -246,7 +246,6 @@ R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\runtimes\win-x8
 R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\runtimes\win-x64\native\WebView2Loader.dll
 R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\runtimes\win-arm64\native\WebView2Loader.dll
 R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\PostgreSQL-Study.exe
-R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Database\DatabaseContent.html
 R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Database\DatabaseDescription.html
 R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Module_2\Lesson_1.html
 R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Module_3\Lesson_1.html
@@ -363,13 +362,5 @@ R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Module_6
 R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Module_7\Image\Example1.PNG
 R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Module_7\Image\Example2.PNG
 R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Module_7\Image\Example3.PNG
-R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Database\Image\Content\Example1.PNG
-R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Database\Image\Content\Example2.PNG
-R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Database\Image\Content\Example3.PNG
-R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Database\Image\Content\Example4.PNG
-R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Database\Image\Content\Example5.PNG
-R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Database\Image\Table\Example1.PNG
-R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Database\Image\Table\Example2.PNG
-R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Database\Image\Table\Example3.PNG
-R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Database\Image\Table\Example4.PNG
-R:\PostgreSQL-Study\PostgreSQL-Study\bin\Debug\net5.0-windows7.0\Course\Database\Image\Table\Example5.PNG
+R:\PostgreSQL-Study\PostgreSQL-Study\obj\Debug\net5.0-windows7.0\View\DatabaseContent.g.cs
+R:\PostgreSQL-Study\PostgreSQL-Study\obj\Debug\net5.0-windows7.0\View\DatabaseContent.baml

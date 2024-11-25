@@ -314,8 +314,7 @@
                         Click="OpenHTMLDocument_Click"/>
                 <Button Content="Содержание БД"
                         Style="{StaticResource ExpanderMenuButtonTheme}"
-                        Tag="Course/Database/DatabaseContent.html"
-                        Click="OpenHTMLDocument_Click"/>
+                        Tag="Course/Database/DatabaseContent.html" Click="Button_Click"/>
             </StackPanel>
         </Grid>
 

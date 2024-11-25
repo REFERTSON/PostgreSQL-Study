@@ -14,8 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Course\Database\Image\Table\" />
-    <Folder Include="Course\Database\Image\Content\" />
     <Folder Include="Course\Module_2\Image\" />
     <Folder Include="Course\Module_3\Image\" />
     <Folder Include="Course\Module_5\Image\" />
@@ -42,40 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Course\Database\DatabaseContent.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Course\Database\DatabaseDescription.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Course\Database\Image\Content\Example1.PNG">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Course\Database\Image\Content\Example2.PNG">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Course\Database\Image\Content\Example3.PNG">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Course\Database\Image\Content\Example4.PNG">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Course\Database\Image\Content\Example5.PNG">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Course\Database\Image\Table\Example1.PNG">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Course\Database\Image\Table\Example2.PNG">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Course\Database\Image\Table\Example3.PNG">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Course\Database\Image\Table\Example4.PNG">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Course\Database\Image\Table\Example5.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Course\Module_2\Image\Example1.PNG">

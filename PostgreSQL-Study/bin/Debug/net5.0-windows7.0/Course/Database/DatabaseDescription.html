@@ -42,18 +42,34 @@
     <h1>Описание таблиц базы данных "Cinema"</h1>
 
     <h2>1. Таблица <code>Movies</code> (Фильмы)</h2>
-    <img src="{% BASEDIR %}\Image\Table\Example1.PNG" width="100%" />
+    <p>ID_Movie - Integer (ID фильма)</p>
+    <p>Title - Character Varying 255 (Название фильма)</p>
+    <p>Genre - Character Varying 60 (Жанр фильма)</p>
+    <p>Release_Year - Integer (Год выхода фильма)</p>
+    <p>Director - Character Varying 100 (Режисёр)</p>
+    <p>Duration - Integer (Продолжительность; время сколько идет фильм в мин.)</p>
+    <p>Description - Text (Описание)</p>
 
     <h2>2. Таблица <code>Showtimes</code> (Показы)</h2>
-    <img src="{% BASEDIR %}\Image\Table\Example2.PNG" width="100%" />
+    <p>ID_Showtime - Integer (ID показа)</p>
+    <p>ID_Movie - Integer (ID фильма)</p>
+    <p>ID_Hall - Integer (ID зала)</p>
+    <p>Start_Time - Time without time zone (Время и дата начала показа)</p>
+    <p>Price - Integer (Цена билета)</p>
 
     <h2>3. Таблица <code>Halls</code> (Залы)</h2>
-    <img src="{% BASEDIR %}\Image\Table\Example3.PNG" width="100%" />
+    <p>ID_Hall - Integer (ID зала)</p>
+    <p>Capacity - Integer (Кол-во мест в зале)</p>
 
     <h2>4. Таблица <code>Tickets</code> (Билеты)</h2>
-    <img src="{% BASEDIR %}\Image\Table\Example4.PNG" width="100%" />
+    <p>ID_Ticket - Integer (ID билета)</p>
+    <p>ID_Customer - Integer (ID покупателя)</p>
+    <p>ID_Showtime - Integer (ID показа)</p>
+    <p>Seat_Number - Integer (Номер места)</p>
 
     <h2>5. Таблица <code>Customers</code> (Покупатели)</h2>
-    <img src="{% BASEDIR %}\Image\Table\Example5.PNG" width="100%" />
+    <p>ID_Customer - Integer (ID покупателя)</p>
+    <p>Name - Character Varying 40 (Имя и фамилия покупателя)</p>
+    <p>Email - Character Varying 100 (Эл. почта)</p>
 </body>
 </html>

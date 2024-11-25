@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 R:\PostgreSQL-Study\PostgreSQL-Study\App.xaml
-10249040648
+111683555738
 3918407168
-12-11793035
+13-368768208
 204-2040679464
-MainWindow.xaml;Styles\ExpanderMenuButtonStyle.xaml;Styles\ExpanderStyle.xaml;Styles\InquirerButtonStyle.xaml;Styles\ScrollTabButtonStyle.xaml;View\AboutProgram.xaml;View\CourseItemViewer.xaml;View\DatabaseDiagram.xaml;View\Inquirer.xaml;View\Settings.xaml;
+MainWindow.xaml;Styles\ExpanderMenuButtonStyle.xaml;Styles\ExpanderStyle.xaml;Styles\InquirerButtonStyle.xaml;Styles\ScrollTabButtonStyle.xaml;View\AboutProgram.xaml;View\CourseItemViewer.xaml;View\DatabaseContent.xaml;View\DatabaseDiagram.xaml;View\Inquirer.xaml;View\Settings.xaml;
 
 False
 
